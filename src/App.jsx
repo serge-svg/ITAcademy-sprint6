@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import scenes from "./data.js";
 import Welcome from "./components/Welcome";
 import StyledBackground from './components/scene/StyledBackground.jsx';
