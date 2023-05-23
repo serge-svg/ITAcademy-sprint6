@@ -5,13 +5,6 @@
   text-align: center;
 }
 
-.app-container {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  min-height: 100vh;
-}
-
 .logo {
   height: 6em;
   padding: 1.5em;

@@ -7,10 +7,10 @@ import { useState } from "react";
 
 import "./App.css";
 
+
 const App = () => {
   const [firstTime, setFirstTime] = useState(true);
   const [index, setIndex] = useState(1);
-  const [backgroundImage, setBackgroundImage] = useState('./assets/img/1.jpg');
 
   function handleInit() {
     setFirstTime(false);
@@ -18,12 +18,10 @@ const App = () => {
 
   function handleButtonPrevius() {
     index === 1 ? setIndex(scenes.length) : setIndex(index - 1);    
-    setBackgroundImage(`./assets/img/${index}.jpg`);
   }
 
   function handleButtonNext() {
     index === scenes.length ? setIndex(1) : setIndex(index + 1);
-    setBackgroundImage(`./assets/img/${index}.jpg`);
   }
 
   if (firstTime) {
@@ -34,8 +32,7 @@ const App = () => {
     );
   } else {
     return (
-      <div className="app-container" 
-        style={{ backgroundImage: `url(${backgroundImage})` }} >
+      <>
         <Buttons previus={handleButtonPrevius} next={handleButtonNext} />
         {scenes.map((scene) => (
           <Scene
@@ -45,7 +42,7 @@ const App = () => {
             index={index}
           />
         ))}
-      </div>
+      </>
     );
   }
 };
