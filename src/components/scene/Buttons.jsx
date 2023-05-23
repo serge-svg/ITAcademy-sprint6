@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Button } from '../Button';
 
 const ButtonsContainer = styled.div
 `
@@ -7,30 +8,19 @@ const ButtonsContainer = styled.div
   margin-bottom: 20px;
 `;
 
-const Button = styled.button
-`
-  background-color: blue;
-  color: white;
-  padding: 10px 20px;
-  margin: 0 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 100px;
-`;
-
-export const Buttons = () => {  
+export const Buttons = (props) => {  
     return (
       <div>
         <ButtonsContainer>
-          <Button onClick={handleButtonPrevius}>
+          <Button onClick={props.previus}>
             Previous
           </Button>
-          <Button onClick={handleButtonNext}>
+          <Button onClick={props.next}>
             Next
           </Button>
         </ButtonsContainer>
       </div>
     );
   };
+  
   
