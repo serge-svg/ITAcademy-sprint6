@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import scenes from "./data.js";
 import Welcome from "./components/Welcome";
+import StyledBackground from './components/scene/StyledBackground.jsx';
 import { Scene } from "./components/scene/Scene.jsx";
 import { Buttons } from "./components/scene/Buttons.jsx";
 import { useState } from "react";
-
 import "./App.css";
 
 
@@ -32,7 +32,7 @@ const App = () => {
     );
   } else {
     return (
-      <>
+      <StyledBackground img={scenes[index-1].img}>
         <Buttons previus={handleButtonPrevius} next={handleButtonNext} />
         {scenes.map((scene) => (
           <Scene
@@ -42,7 +42,7 @@ const App = () => {
             index={index}
           />
         ))}
-      </>
+      </StyledBackground>
     );
   }
 };
